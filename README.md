@@ -43,6 +43,7 @@ Find the file `index.js` and complete the tasks.
 Edit the `ReadMe` file with your answers.
 
 1. In your own words, define closure (1-2 sentences).
+  ans: Closure is the defines the set of variables and functions you have access to based on a parent child reltionship that would otherwise not be available.
 2. Study the following code, then answer the questions below.
 
 ```js
@@ -64,8 +65,12 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
+  When the return function accesses the name variable passed to personalDice
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
-c. What is the lexical scope of `newRoll`? 
+  The name variable - Dan - will always be the same. And the sentence, 'Dan rolled a ___' will always be the same. The number Dan rolled can change. 
+c. What is the lexical scope of `newRoll`?
+  The return function
+  
 
 
 ### Task 3 - Stretch Goals
