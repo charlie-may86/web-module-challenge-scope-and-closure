@@ -28,11 +28,14 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
   Study the code for counter1 and counter2, then answer the questions below.
   
   1. What is the difference between counter1 and counter2?
+    ans: counter1 is using closure and a function to store a variable. counter is increamenting a variable stored outside its scope. The count variable could be incremeneted by an infinite number of functions.
   
   2. Which of the two uses a closure? How can you tell?
+    ans: counter1 is using closure because it has a nested function
   
   3. In what scenario would the counter1 code be preferable? In what scenario would 
      counter2 be better?  
+     ans:  When you want to control a variable more closely, I think counter1 would make a lot more sense. The variable can only be incremented and returned with the counterMaker function. So when you use const to declare counter1, counter1 is safe from other functions acting on it, but it is still incrementable. 
 */
 
 // counter1 code
@@ -62,8 +65,8 @@ Use the inning function below to do the following:
 NOTE: This will be a callback function for the tasks below
 */
 
-function inning(/*Code Here*/){
-    /*Code Here*/
+function inning(){
+    return Math.floor(Math.random() * 3)
 }
 
 
@@ -81,9 +84,21 @@ Use the finalScore function below to do the following:
 }
 */ 
 
-function finalScore(/*code Here*/){
-  /*Code Here*/
+function finalScore(callback, x){
+  let Home = 0
+  let Away = 0
+  for(let i = 1; i <= x; i++) {
+    Home += callback();
+    Away += callback();
+  }
+  return {
+    Home: Home,
+    Away: Away
+  }
 }
+
+console.log(finalScore(inning, 9))
+
 
 /* ⚾️⚾️⚾️ Task 4: getInningScore() ⚾️⚾️⚾️
 Use the getInningScore() function below to do the following:
